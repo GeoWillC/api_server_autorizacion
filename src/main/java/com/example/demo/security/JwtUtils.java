@@ -12,12 +12,12 @@ import io.jsonwebtoken.SignatureAlgorithm;
  * JwUtils
  */
 @Component
-public class JwUtils {
+public class JwtUtils {
 
     @Value("${app.jwtSemilla}")
     private String jwtSemilla;
     @Value("${app.jwtExpirationMs}")
-    private String jwtExpirationMs;
+    private int jwtExpirationMs;
 
     public String buildTokenJwt(String nombre) {
         // Expira luego de un tiempo
