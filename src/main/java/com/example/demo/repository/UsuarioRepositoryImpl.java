@@ -3,7 +3,6 @@ package com.example.demo.repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import javax.swing.text.html.parser.Entity;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
