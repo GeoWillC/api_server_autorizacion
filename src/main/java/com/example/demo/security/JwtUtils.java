@@ -19,10 +19,15 @@ public class JwtUtils {
     @Value("${app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
-    public String buildTokenJwt(String nombre) {
+    @SuppressWarnings("deprecation")
+	public String buildTokenJwt(String nombre) {
         // Expira luego de un tiempo
-        return Jwts.builder().setSubject(nombre).setSubject("Hola mundo").setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + this.jwtExpirationMs))
-                .signWith(SignatureAlgorithm.HS512, this.jwtSemilla).compact();
+    	 return Jwts.builder()
+    	            .setSubject(nombre)
+    	            .setIssuedAt(new Date())
+    	            .setExpiration(new Date(System.currentTimeMillis() + this.jwtExpirationMs))
+    	            .signWith(SignatureAlgorithm.HS256, this.jwtSemilla)
+    	            .compact();
     }
+    
 }

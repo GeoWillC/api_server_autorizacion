@@ -37,7 +37,9 @@ public class AuthorizationControllerRestful {
 
         private void autenticacion(String usuario,String password){
         UsernamePasswordAuthenticationToken usuarioToken=new UsernamePasswordAuthenticationToken(usuario,password);
+        	System.out.println("Usuario token"+usuarioToken);
             Authentication autenticacion= this.authenticationManager.authenticate(usuarioToken);
+            System.out.println("Autenteicacion"+autenticacion);
             SecurityContextHolder.getContext().setAuthentication(autenticacion);
         }
 }
